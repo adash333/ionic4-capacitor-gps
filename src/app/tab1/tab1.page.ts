@@ -10,7 +10,7 @@ export class Tab1Page {
   latitude: number;
   longitude: number;
 
-  showBtn: boolean = false;
+  showBtn = false;
   deferredPrompt;
 
   constructor() {
@@ -23,7 +23,7 @@ export class Tab1Page {
     this.longitude = position.coords.longitude;
   }
 
-  ngOnInit() {
+  OnInit() {
     this.showBtn = true;
     window.addEventListener('beforeinstallprompt', e => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -35,7 +35,7 @@ export class Tab1Page {
       this.showBtn = true;
     });
 
-    //button click event to show the promt
+    // button click event to show the promt
 
     window.addEventListener('appinstalled', event => {
       alert('installed');
@@ -47,7 +47,7 @@ export class Tab1Page {
   }
 
   add_to_home(e) {
-    debugger;
+    // debugger;
     // hide our user interface that shows our button
     // Show the prompt
     this.deferredPrompt.prompt();
