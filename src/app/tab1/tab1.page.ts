@@ -13,7 +13,7 @@ export class Tab1Page {
   showBtn = false;
   deferredPrompt;
 
-  OnInit() {
+  ngOnInit() {
     this.showBtn = true;
     window.addEventListener('beforeinstallprompt', e => {
       // Prevent Chrome 67 and earlier from automatically showing the prompt
