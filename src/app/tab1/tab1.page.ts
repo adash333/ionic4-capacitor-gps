@@ -15,18 +15,15 @@ export class Tab1Page {
 
   OnInit() {
     this.showBtn = true;
-    window.addEventListener(
-      'beforeinstallprompt',
-      (e: Event & { target: { result: string } }) => {
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
-        e.preventDefault();
-        // Stash the event so it can be triggered later on the button event.
-        this.deferredPrompt = e;
+    window.addEventListener('beforeinstallprompt', e => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later on the button event.
+      this.deferredPrompt = e;
 
-        // Update UI by showing a button to notify the user they can add to home screen
-        this.showBtn = true;
-      }
-    );
+      // Update UI by showing a button to notify the user they can add to home screen
+      this.showBtn = true;
+    });
 
     // button click event to show the promt
 
@@ -39,7 +36,7 @@ export class Tab1Page {
     }
   }
 
-  add_to_home(e) {
+  add_to_home() {
     // debugger;
     // hide our user interface that shows our button
     // Show the prompt
