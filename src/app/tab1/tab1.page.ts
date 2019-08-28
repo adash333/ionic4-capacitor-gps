@@ -13,16 +13,6 @@ export class Tab1Page {
   showBtn = false;
   deferredPrompt;
 
-  constructor() {
-    this.getLocation();
-  }
-
-  async getLocation() {
-    const position = await Geolocation.getCurrentPosition();
-    this.latitude = position.coords.latitude;
-    this.longitude = position.coords.longitude;
-  }
-
   OnInit() {
     this.showBtn = true;
     window.addEventListener(
@@ -63,5 +53,15 @@ export class Tab1Page {
       }
       this.deferredPrompt = null;
     });
+  }
+
+  constructor() {
+    this.getLocation();
+  }
+
+  async getLocation() {
+    const position = await Geolocation.getCurrentPosition();
+    this.latitude = position.coords.latitude;
+    this.longitude = position.coords.longitude;
   }
 }
