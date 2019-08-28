@@ -18,4 +18,8 @@
       <ion-item>Longitude: {{ longitude }}</ion-item>
     </ion-card-content>
   </ion-card>
+
+  <ion-button expand="full" (click)="add_to_home(event)" *ngIf="showBtn">
+    Install
+  </ion-button>
 </ion-content>
